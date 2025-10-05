@@ -1,0 +1,77 @@
+{% extends 'Home/base.html' %}
+{% load static %}
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Edit departments</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/departments">departments</a></li>
+                        <li class="breadcrumb-item active">Edit departments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Department Information</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Department Name</label>
+                                        <input type="text" name=department_name" class="form-control" value="{{ department_name }}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Department Id</label>
+                                        <input type="text" name=departmentt_id" class="form-control" value="{{ department.department_id }}">
+                                    </div>
+                                </div>
+    
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>HOD</label>
+                                        <input type="text" name="department_hod" class="form-control" value="{{ department.department_hod }}">
+                                    </div>
+                                </div>
+                            
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Mobile Number</label>
+                                        <input type="text" name="mobile_number" class="form-control" value="{{ department.mobile_number }}">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Department Email</label>
+                                        <input type="text" name="department_email" class="form-control" value="{{ department.department_email }}">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+<script src="{% static 'assets/js/script.js' %}"></script>
+{% endblock %}
